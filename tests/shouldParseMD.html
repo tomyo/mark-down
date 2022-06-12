@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<meta lang="en">
+<title>Should parce markdown</title>
+
+<script async src="../mark-down.js" type="module"></script>
+
+<mark-down>
+  # A Title
+
+  A paragraph
+
+  * With
+  * Some
+  * List
+</mark-down>
+
+
+<script type="module">
+  const { assert, assertEqual, runTests, waitFor } = await import('./test-utils.js');
+
+  let markDown;
+
+  async function setup() {
+    markDown = document.querySelector('mark-down');
+    await waitFor(() => markDown.shadowRoot);
+  }
+
+  const tests = {
+    shouldConvertH1() {
+      const h1 = markDown.shadowRoot.querySelector('h1');
+
+      assert(h1, '<h1> is present');
+      assertEqual(h1.textContent, 'A Title', '<h1>.textContent');
+    },
+
+    shouldConvertP() {
+      const p = markDown.shadowRoot.querySelector('p');
+
+      assert(p, '<p> is present');
+      assertEqual(p.textContent, 'A paragraph', '<p>.textContent');
+    },
+
+    shouldConvertUL() {
+      const ul = markDown.shadowRoot.querySelector('ul');
+
+      assert(ul, '<ul> is present');
+      assertEqual(ul.textContent, '\nWith\nSome\nList\n', '<ul>.textContent');
+    },
+  }
+
+  await setup();
+  runTests(tests);
+</script>

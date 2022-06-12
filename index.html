@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<meta lang="en" />
+<title>&lt;mark-down&gt;</title>
+
+<mark-down>
+  ... Loading README.md
+</mark-down>
+
+<script src="mark-down.js" type="module"></script>
+
+<script type="module">
+  const readme = await(await fetch('README.md')).text();
+  const markDown = document.querySelector('mark-down');
+  markDown.innerHTML = `<pre>${readme}</pre>`;
+</script>

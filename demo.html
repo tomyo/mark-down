@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<meta lang="en" />
+
+<script async src="mark-down.js" type="module"></script>
+
+<h1>Demo</h1>
+
+<mark-down>
+  # this is a title
+
+  Tests can be found [here](tests/shouldParseMD.html).
+
+  Here is a paragraph, with [a link](www.some-site.com)
+
+  - [ ] a task.
+
+  * and a list item.
+
+  ## subtitle
+
+  *and some more italic text*
+</mark-down>
+
+<button onclick="(()=>{
+    const md = document.querySelector('mark-down');
+    md.innerHTML += `\n[extra link](some-relative-location) `;
+  })()">
+  Add a link
+</button>
