@@ -2,34 +2,42 @@
 
 *A simple wrapper around [showdown](https://github.com/showdownjs/showdown/)'s markdown parser, in the form of a web-component.*
 
-## Instructions
 
-* Download [mark-down.js](mark-down.js) and [use-showdown.js](use-showdown.js)
 
-* Import/Include module: 
+### Import/Include module
 
-  `<script src="mark-down.js" type="module">`
+  ```html
+  <script type="module" src="https://tomyo.github.io/mark-down/mark-down.js" >
+  ```
 
 ### Usage
 
 * Declarative
 
   ```html
-  <mark-down>
+    <mark-down>
       # Some title
       ...
       A paragraph
       * A
       * List
-  </mark-down>
+    </mark-down>
   ```
 
 * Imperative
 
-  `document.querySelector('mark-down').innerHTML = "#whatever ..."`
+  ```js
+    document.querySelector('mark-down').innerHTML = `
+      # Some title
+      ...
+      A paragraph
+      * A
+      * List
+    `
+ ```
 
 ### More info
+* [Demo](./demo.html)
+* [Tests](./tests/shouldParseMD.html)
+* [Github](https://github.com/tomyo/mark-down)
 
-* Some [Tests](tests/shouldParseMD.html) (summary shown in console).
-
-* Code is simple, read it :)
