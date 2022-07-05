@@ -2,8 +2,6 @@
 
 *A simple wrapper around [showdown](https://github.com/showdownjs/showdown/)'s markdown parser, in the form of a web-component.*
 
-
-
 ### Import/Include module
 
   ```html
@@ -34,9 +32,11 @@
       * A
       * List
     `
- ```
+  ```
 
 ### More info
+
+* [Website showing this README using mark-down](https://tomyo.github.io/mark-down/)
 * [Demo](./demo.html)
 * [Tests](./tests/shouldParseMD.html)
 * [Github](https://github.com/tomyo/mark-down)
